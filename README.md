@@ -10,4 +10,4 @@ El proyecto será un visualizador de agentes del juego de Riot  Games, Valorant.
 A cada agente le corresponde un único rol mientras varios agentes pueden pertenecen al mismo. 
 ## Diagrama de Entidad-Relación:
 
-![Diagrama de Entidad-Relacion](DiagramaEntidad-Relacion)
+![Diagrama de Entidad-Relacion](DiagramaEntidad-Relacion.png)
