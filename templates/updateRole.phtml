@@ -1,0 +1,19 @@
+<?php require 'templates/header.phtml'; ?>
+
+<div class="editRoleContainer">
+    <h2> Actualice los datos del rol </h2>
+    <form class="roleForm" action="editRole/<?= $role->id_role ?>" method="post">
+        <label for="name">Nombre de rol</label>
+        <input type="text" value="<?= $role->name ?>" name=name>
+        <label for="description">Descripción</label>
+        <textarea name="description" cols="30" rows="5"> <?= $role->description ?> </textarea>
+        <label for="icon">Enlace de la imagen</label>
+        <input type="text" value="<?= $role->icon ?>" name=icon>
+        <label for="agresivity">Agresividad</label>
+        <input type="number" value="<?= $role->agresivity ?>" name="agresivity" min="1" max="5">
+        <button class="btn" type="submit">Editar</button>
+    </form>
+</div>
+
+
+<?php require 'templates/footer.phtml'; ?>

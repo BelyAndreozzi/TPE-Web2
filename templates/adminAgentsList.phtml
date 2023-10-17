@@ -1,0 +1,20 @@
+<?php require 'templates/header.phtml'; ?>
+
+<div class="agentsAdminContainer">
+    <a  class="btn createBtn" href="agregar-agente">Crear</a>
+    <?php foreach ($agents as $agent) : ?>
+        <div class="agentContainerAdminList">
+            <a class="agentInfoAdminList" href="agente/<?= $agent->id ?>">
+                <img class="adminImg" src="<?= $agent->agent_img ?>" alt="<?= $agent->alias ?>">
+                <h2><?= $agent->alias ?></h2>
+            </a>
+            <div>
+                <a class="btn" href="editar-agente/<?= $agent->id ?>">Editar</a>
+                <a class="btn btnDelete" href="deleteAgent/<?= $agent->id ?>">Eliminar</a>
+            </div>
+        </div>
+
+    <?php endforeach ?>
+</div>
+
+<?php require 'templates/footer.phtml'; ?>

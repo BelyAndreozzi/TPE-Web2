@@ -1,0 +1,17 @@
+<?php require 'templates/header.phtml'; ?>
+<div class="allItemsContainer">
+    <?php foreach ($agents as $agent) : ?>
+        <a href="agente/<?= $agent->id ?>">
+        <div class="agentContainer">
+                <img class="agentImg" src="<?= $agent->agent_img ?>" alt="<?= $agent->alias ?>">
+                <div class="agentBasicInfo">
+                    <h2><?= $agent->alias ?></h2>
+                    <p><?= $agent->role ?></p>
+                </div>
+            </div>
+        </a>
+    <?php endforeach ?>
+</div>
+
+
+<?php require 'templates/footer.phtml' ?>

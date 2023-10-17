@@ -1,0 +1,19 @@
+<?php require 'templates/header.phtml'; ?>
+<div class="AdminRolesContainer">
+    <a class="btn createBtn" href="agregar-rol">Crear</a>
+    <?php foreach ($roles as $role) : ?>
+
+        <div class="roleAdminContainer">
+            <a class="clickeable" href="rol/<?= $role->name ?>">
+                <h2><?= $role->name ?></h2>
+            </a>
+            <img class="adminRoleImg" src=<?= $role->icon ?> alt="<?= $role->name ?>">
+            <div>
+                <a class="btn" href="editar-rol/<?= $role->id_role ?>">Editar</a>
+                <a class="btn btnDelete" href="deleteRole/<?= $role->id_role ?>">Eliminar</a> 
+            </div>
+        </div>
+        <?php endforeach ?>
+</div>
+
+<?php require 'templates/footer.phtml' ?>

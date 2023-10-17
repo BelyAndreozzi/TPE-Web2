@@ -1,0 +1,19 @@
+<?php require 'templates/header.phtml'; ?>
+
+<div class="allRolesContainer">
+    <?php foreach ($roles as $role) : ?>
+    
+        <div class="roleContainer">
+            <a class="clickeable" href="rol/<?= $role->name ?>"><h2><?= $role->name ?></h2></a>
+            <img class="role_icon" src=<?= $role->icon ?> alt="<?= $role->name ?>">
+            <div class="roleInfo">
+            <h3>Descripcion</h3>
+            <p><?= $role->description ?></p>
+            <h3>Agresividad</h3>
+            <p><?= $role->agresivity ?></p>
+            </div>
+        </div>
+    <?php endforeach ?>
+</div>
+
+<?php require 'templates/footer.phtml'; ?>

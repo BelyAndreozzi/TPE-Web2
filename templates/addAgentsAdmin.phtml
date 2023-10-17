@@ -1,0 +1,31 @@
+<?php require 'templates/header.phtml' ?>
+
+<h2>Ingrese los datos del agente</h2>
+
+<form class="formCreateAdmin" action="addAgent" method="post">
+    <input type="text" name="alias" placeholder="Alias">
+    <label for="id_role_fk">Rol:</label>
+    <select name="id_role_fk">
+        <?php foreach ($roles as $role) : ?>
+        <option value="<?= $role->id_role?>"><?= $role->name?></option>
+    <?php endforeach ?>
+    </select>
+    <textarea name="description" cols="30" rows="10" placeholder="Descripción"></textarea>
+    <input type="text" name="agent_img" placeholder="Enlace de la imagen">
+    <input type="number" name="age" placeholder="Edad" min="18">
+    <input type="text" name="nacionality" placeholder="Nacionalidad">
+    <label for="race">Seleccione una raza:</label>
+    <select name="race">
+        <option value="Humana">Humana</option>
+        <option value="Radiante">Radiante</option>
+    </select>
+    <label for="is_free">¿Es gratis?</label>
+    <select name="is_free">
+        <option value="1">Si</option>
+        <option value="0">No</option>
+    </select>
+    <input type="number" name="teamwork" placeholder="Escala de trabajo en equipo" min="1" max="5">
+    <button class="btn" type="submit">Agregar</button>
+</form>
+
+<?php require 'templates/footer.phtml' ?>

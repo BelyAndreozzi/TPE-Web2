@@ -1,0 +1,26 @@
+<?php require 'templates/header.phtml'; ?>
+<div class="allAgentsContainer">
+    <h2><?= $agentId->alias ?></h2>
+    <h3>Descripcion</h3>
+    <p><?= $agentId->description ?></p>
+    <img src="<?= $agentId->agent_img ?>" alt="<?= $agentId->alias ?>">
+    <h3>Rol</h3>
+    <p><?= $agentId->role ?></p>
+    <h3>Edad</h3>
+    <p><?= $agentId->age ?></p>
+    <h3>Nacionalidad</h3>
+    <p><?= $agentId->nacionality ?></p>
+    <h3>Raza</h3>
+    <p><?= $agentId->race ?></p>
+    <h3>Es gratuito?</h3>
+    <p><?php if ($agentId->is_free = 0) {
+        echo 'No';
+    } else if ($agentId->is_free = 1) {
+        echo 'Sí';
+    } ?></p>
+    <h3>Escala de trabajo en equipo</h3>
+    <p><?= $agentId->teamwork ?></p>
+</div>
+
+
+<?php require 'templates/footer.phtml' ?>

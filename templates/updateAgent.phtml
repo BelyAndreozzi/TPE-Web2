@@ -1,0 +1,45 @@
+<?php require 'templates/header.phtml' ?>
+
+<h2>Actualiza los datos del agente</h2>
+
+<form class="formCreateAdmin" action="editAgent/<?= $agent->id ?>" method="post">
+    <input type="text" name="alias" value="<?= $agent -> alias?>"> 
+    
+    <label for="id_role_fk">Rol:</label>
+    <select name="id_role_fk">
+        <option value="<?= $agent->id_role_fk?>"><?= $agent->role?></option>
+    </select>
+    <label for="description">Descripción:</label>
+    <textarea name="description" cols="30" rows="10" placeholder="Descripción"><?= $agent -> description ?></textarea>
+    <label for="agent_img">Enlace de Imagen:</label>
+    <input type="text" name="agent_img" value="<?= $agent -> agent_img?>">
+    <label for="age">Edad:</label>
+    <input type="number" name="age" value="<?= $agent -> age?>" min="18">
+    <label for="nacionality">Nacionalidad:</label>
+    <input type="text" name="nacionality" value="<?= $agent -> nacionality?>">
+    <label for="race">Seleccione una raza:</label>
+    <select name="race">
+        <?php if ($agent -> race == 'Humana')  {?>
+            <option value="Humana" selected>Humana</option>
+            <option value="Radiante">Radiante</option>
+        <?php } elseif ($agent -> race == 'Radiante')  { ?>
+            <option value="Humana">Humana</option>
+            <option value="Radiante" selected>Radiante</option>
+        <?php } ?>
+    </select>
+    <label for="is_free">¿Es gratis?</label>
+    <select name="is_free">
+    <?php if ($agent -> is_free == 1)  {?>
+            <option value="1" selected>Sí</option>
+            <option value="0">No</option>
+        <?php } elseif ($agent -> is_free == 0)  { ?>
+            <option value="1">Sí</option>
+            <option value="0" selected>No</option>
+        <?php } ?>
+    </select>
+    <label for="teamwork">Trabajo en equipo: </label>
+    <input type="number" name="teamwork" value="<?= $agent -> teamwork?>" min="1" max="5">
+    <button class="btn" type="submit">Editar</button>
+</form>
+
+<?php require 'templates/footer.phtml' ?>

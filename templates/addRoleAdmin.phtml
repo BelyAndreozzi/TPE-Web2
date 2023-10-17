@@ -1,0 +1,15 @@
+<?php require 'templates/header.phtml' ?>
+
+<div class="createRoleContainer">
+    <h2> Ingrese los datos del rol </h2>
+    <form class="roleForm" action="addRole" method="post">
+        <input type="text" name="name" placeholder="Nombre">
+        <textarea name="description" cols="30" rows="10" placeholder="Descripcion"></textarea>
+        <input type="text" name="icon" placeholder="Enlace de la imagen">
+        <input type="number" name="agresivity" placeholder="Agresividad" min="1" max="5">
+        <button class="btn" type="submit">Agregar</button>
+    </form>
+</div>
+
+
+<?php require 'templates/footer.phtml' ?>
